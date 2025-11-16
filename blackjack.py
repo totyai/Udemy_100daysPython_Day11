@@ -16,6 +16,7 @@ player_hand = {}
 computer_hand = {}
 cont = True
 def init():
+    """Create player_hand, computer_hand and their sums"""
     global player_hand, computer_hand, cont
     player_hand = {
         "hand": [],
@@ -28,15 +29,18 @@ def init():
     cont = True
 
 def hand_com(round):
+    """This function prints to the consult the hands and sums for player and comp"""
     global player_hand, computer_hand
     print(f"Your {round} hand: {player_hand['hand']}, Total: {player_hand['sum']}.")
     print(f"Opponent's {round} hand: {computer_hand['hand']}, Total: {computer_hand['sum']}")
 
 def add_card(deck):
+    """This function deals card to the deck inputted"""
     deck["hand"].append(random.choice(cards))
     deck["sum"] = sum(deck["hand"])
 
 def game():
+    """This is the main game logic function"""
     global player_hand, computer_hand, cont
     print(logo)
 
